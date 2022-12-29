@@ -6,11 +6,9 @@ CLIENT_COMMANDS = ['start', 'ng', 'serve']
 def main():
   # Activate the API server
   api_process = subprocess.Popen(API_COMMANDS, shell=True, cwd='API')
-  api_process.wait()
   
   # Activate the client server
   client_process = subprocess.Popen(CLIENT_COMMANDS, shell=True, cwd='client')
-  client_process.wait()
   
   # Opens https://localhost:4200, Angular's development URL, in your browser
   webbrowser.open('https://localhost:4200', new=2)

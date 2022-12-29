@@ -31,6 +31,75 @@ This markdown contains notes for the proof-of-concept e-commerce project
 
 ## Client - Angular Setup
 
+### Observables
+* A sequence of items that arrive asynchronously
+* Typically in JS frameworks, "promises" were used instead of observables to halt script execution.
+
+<table>
+  <tr style="text-align: center;">
+    <td>Promises</td>
+    <td>Observables</td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>One pipeline</li>
+        <li>Used w/ async data return</li>
+        <li>Non-cancellable</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Cancellable</li>
+        <li>Multiple pipelines</li>
+        <li>Array-like operations (map, filter,...)</li>
+        <li>Created from other sources like event</li>
+        <li>Can be subscribed to (listening to result)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### HTTP, Obersevables and RxJS
+1. HTTP `GET` request from `ShopService`
+2. Receive Observable --> cast to `Products` array
+3. Subscribe to Observable from component --> Initiate API requests and retrieve data
+4. Assign `Products` array to local variable to use on components template
+
+### RxJS
+* JS reactive exntensions
+* Utility library for working with observables
+* Uses `pipe()` method to chain RxJS operators together
+
+### TypeScript
+
+<table>
+  <tr style="text-align: center;">
+    <td>Advantages</td>
+    <td>Drawbacks</td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>Strong Typing</li>
+        <li>Object-oriented</li>
+        <li>Better Intellisense & autocomplete</li>
+        <li>Access Modifiers (i.e., public private)</li>
+        <li>Future JS features, i.e. decorators</li>
+        <li>Catches mistakes & development</li>
+        <li>Third-party support</li>
+        <li>Easy if you already know JS</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>More upfront code</li>
+        <li>Not all third-parties supports TS</li>
+        <li>TS Strict Mode requires types for everything</li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 ## Client - Angular Basics
 
