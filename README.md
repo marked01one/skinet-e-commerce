@@ -4,6 +4,12 @@
 
 ***DO NOT ACTUALLY BUY. WE DO NOT OFFER ANY PRODUCTS OR SERVICES.***
 
+<h1 align="center">Getting Started</h1>
+
+To fire up both the API and client servers, use this command to call the associated Python script that will execute both.
+```shell
+C:\...\skinet-e-commerce> python dev.py
+```
 
 <div align="center">
 
