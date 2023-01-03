@@ -12,7 +12,7 @@ namespace API.Extensions
     {
       services.AddSwaggerGen(c =>
       {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "SkiNET API", Version = "v1" });
       });
 
       return services;

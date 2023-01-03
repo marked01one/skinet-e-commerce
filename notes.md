@@ -108,3 +108,9 @@ This markdown contains notes for the proof-of-concept e-commerce project
 * Single-page applications (SPA) need routers to route users to other components, instead of another page
 * Angular router will load a component when route is activated
 * `<RouterOutlet>`
+
+
+## Client - Error Handling
+* Https interceptors
+* Toast notifications
+* 

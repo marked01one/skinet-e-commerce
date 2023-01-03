@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Oops!</h1>
+  <h5>Error 500: Internal Server Error</h5>
+  <ng-container *ngIf="error">
+    <p>Refreshing the page will make the exception disappear</p>
+    <h5 class="text-danger">Exception code: </h5>
+    <code>{{error.message}}</code>
+    <div class="helper">
+      <p class="font-weight-bold">
+        Note: if you are seeing this then Angular is probably not responsible for the error
+      </p>
+      <p style="font-style: italic;">What to do next?</p>
+      <ol>
+        <li>Open Chrome Dev Tools</li>
+        <li>Inspect network tab</li>
+        <li>Check the failing request</li>
+        <li>Examine this request URL - make sure this is correct</li>
+        <li>Reproduce the error in Postman - if you receive the same response, then the issue is NOT with Angular</li>
+      </ol>
+      <p>Following is the stack trace - this is where your investigation should start</p>
+      <code class="mt-5">{{error.details}}</code>
+    </div>
+  </ng-container>
+  
+</div>
