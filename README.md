@@ -4,9 +4,9 @@
 
 ***DO NOT ACTUALLY BUY. WE DO NOT OFFER ANY PRODUCTS OR SERVICES.***
 
-<h1 align="center">Getting Started</h1>
+<h2 align="center">Getting Started</h2>
 
-To fire up both the API and client servers, use this command to call the associated Python script that will execute both.
+To fire up both the API and client servers, use this command in the project's root directory to call the associated Python script that will execute both.
 ```shell
 C:\...\skinet-e-commerce> python dev.py
 ```
