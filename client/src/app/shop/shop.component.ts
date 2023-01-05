@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IProduct } from '../shared/models/products';
 import { ShopService } from './shop.service';
 import { IBrand } from '../shared/models/brands';
@@ -12,7 +12,7 @@ import { ShopParams } from '../shared/models/shopParams';
 })
 export class ShopComponent implements OnInit {
   // Gain access to a child element using a reference string
-  @ViewChild('search', {static: true}) searchTerm: ElementRef;
+  @ViewChild('search', {static: false}) searchTerm: ElementRef;
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
@@ -25,7 +25,7 @@ export class ShopComponent implements OnInit {
     {name: 'Price: High to Low', value: 'priceDesc'}
   ]
 
-  constructor(private shopService: ShopService) {}
+  constructor(private shopService: ShopService) { }
   
   ngOnInit(): void {
     this.getProducts();
