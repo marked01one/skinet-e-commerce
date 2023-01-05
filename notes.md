@@ -29,6 +29,20 @@ This markdown contains notes for the proof-of-concept e-commerce project
   * `ToList()` `ToArray()` `ToDictionary()`
   * `Count()` or other singleton queries
 
+
+## API - Basket
+* Set up & configure Redis for saving customer basket in server memory
+* Create Basket repository & controller
+
+### Redis
+* Typically use for caching; very fast & persistent in-memory storage
+* Supports strings, hashes, sets,...
+* Key / Value store
+* Stored in-memory and not in hard drives --> very fast
+* Persist data by using snapshots every minute
+* Data can be given an expiry date
+
+
 ## Client - Angular Setup
 
 ### Observables
