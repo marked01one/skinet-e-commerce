@@ -12,8 +12,9 @@ const routes: Routes = [
   {path: 'not-found', component: NotFoundComponent, data: {breadcrumb: 'Not Found Error'}},
   // Shop module will only be imported and loaded when shop path is accessed
   {path: 'shop', loadChildren: () => import('./shop/shop.module').then(mod => mod.ShopModule)
-  , data: {breadcrumb: 'Shop'}
-  },
+  , data: {breadcrumb: 'Shop'}},
+  {path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule)
+  , data: {breadcrumb: 'Basket'}},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'}
 ];
 
