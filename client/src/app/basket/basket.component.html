@@ -21,7 +21,7 @@
     </div>
   </div>
   
-  <div *ngIf="(basket$ | async) as basket">
+  <div *ngIf="(basket$ | async) as basket" class="with-products">
     <div class="pb-5">
       <div class="container">
         <div class="row">
@@ -30,7 +30,7 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <th class="border-0 bg-light" scope="col">
+                    <th class="border-0 bg-light" scope="col" class="product">
                       <div class="p-2 px-3 text-uppercase">Product</div>
                     </th>
                     <th class="border-0 bg-light" scope="col">

@@ -2,6 +2,7 @@ using API.Extensions;
 using API.Helpers;
 using API.MIddleware;
 using Infrastructure.Data;
+using Infrastructure.Identity;
 using Microsoft.EntityFrameworkCore;
 using StackExchange.Redis;
 
@@ -20,11 +21,12 @@ namespace API
     {
       // .AddScoped(): Create the repository for the duration of the HTTP request
       // Automatically disposes the controller & repository after the request is finished
-      
-
       services.AddAutoMapper(typeof(MappingProfiles));
       services.AddControllers();
       services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+      services.AddDbContext<AppIdentityDbContext>(x => {
+        x.UseSqlite(_config.GetConnectionString("IdentityConnection"));
+      });
 
       services.AddSingleton<IConnectionMultiplexer>(c => 
       {
@@ -33,7 +35,7 @@ namespace API
       });
 
       services.AddApplicationServices();
-
+      services.AddIdentityServices(_config);
       services.AddSwaggerDocumentation();
       services.AddCors(opt =>
       {
@@ -60,6 +62,8 @@ namespace API
       app.UseStaticFiles();
 
       app.UseCors("CorsPolicy");
+
+      app.UseAuthentication();
 
       app.UseAuthorization();
 

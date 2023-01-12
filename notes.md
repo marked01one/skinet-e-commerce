@@ -34,6 +34,16 @@ This markdown contains notes for the proof-of-concept e-commerce project
 * Set up & configure Redis for saving customer basket in server memory
 * Create Basket repository & controller
 
+## API - Identity
+* ASP.NET Identity
+  * Issue tokens to client, which can be used to authenticate against the methods & classes inside our API
+
+* Context boundary
+* Using the `UserManager` & `SignInManager`
+* Extension methods
+* JSON Web Tokens (JWTs)
+
+
 ### Redis
 * Typically use for caching; very fast & persistent in-memory storage
 * Supports strings, hashes, sets,...
@@ -127,4 +137,3 @@ This markdown contains notes for the proof-of-concept e-commerce project
 ## Client - Error Handling
 * Https interceptors
 * Toast notifications
-* 
