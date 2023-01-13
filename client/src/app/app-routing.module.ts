@@ -17,6 +17,9 @@ const routes: Routes = [
   , data: {breadcrumb: 'Basket'}},
   {path: 'checkout', loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule)
   , data: {breadcrumb: 'Checkout'}},
+  // Breadcrumb details are skipped for this level in Account (due to there being no routes for account root)
+  {path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule)
+  , data: {breadcrumb: {skip: true}}},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'},
 ];
 

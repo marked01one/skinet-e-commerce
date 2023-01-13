@@ -137,3 +137,5 @@ This markdown contains notes for the proof-of-concept e-commerce project
 ## Client - Error Handling
 * Https interceptors
 * Toast notifications
+
+## Client - Angular Forms

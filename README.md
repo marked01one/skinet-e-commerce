@@ -6,29 +6,15 @@
 
 ## Getting Started
 
-To activate, API, client, and Redis container servers, use this command in the project's root directory:
+To activate, API, client, and Redis container servers, run this command in the project's root directory:
 ```
-C:\...\skinet-e-commerce> python dev.py
+python dev.py run_all
 ```
-Alternatively, you can launch the API and client servers on two separate terminals as follows:
+Alternatively, you can launch the API and client servers on separately as follows:
+* API: `python dev.py api`
+* Client: `python dev.py client`
+* Redis containers: `python dev.py redis`
 
-### API
-```
-C:\...\skinet-e-commerce> cd api
-C:\...\skinet-e-commerce\API> dotnet run
-```
-
-### Client
-```
-C:\...\skinet-e-commerce> cd client
-C:\...\skinet-e-commerce\API> ng serve
-```
-
-### Redis containers
-```
-C:\...\skinet-e-commerce> docker start skinet-e-commerce-redis-commander-1
-C:\...\skinet-e-commerce\API> docker start skinet-e-commerce-redis-1
-```
 
 ## API Documentation
 
