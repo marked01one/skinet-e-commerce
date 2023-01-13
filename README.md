@@ -6,7 +6,7 @@
 
 ## Getting Started
 
-To fire up both the API and client servers, use this command in the project's root directory to call the associated Python script that will execute both.
+To activate, API, client, and Redis container servers, use this command in the project's root directory:
 ```
 C:\...\skinet-e-commerce> python dev.py
 ```
@@ -48,8 +48,8 @@ For detailed documentation on the API itself, open `https://localhost:5001/swagg
 * AngularJS
 * Bootstrap
 * SQLite (development only)
-* MySQL (will be deployed)
-* Redis
+* MySQL (for storing product and user data)
+* Redis (for caching and storing user-generated product baskets)
 * Postman
 * Visual Studio Code
 
