@@ -139,3 +139,31 @@ This markdown contains notes for the proof-of-concept e-commerce project
 * Toast notifications
 
 ## Client - Angular Forms
+
+### `FormsModule`
+* HTML Template-driven:
+  * Easy to use
+  * Good for simple scenarios
+  * 2-way binding (uses ngModel)
+  * Minimal component code
+  * Automatic tracking by Angular
+  * Testing is hard
+
+### `ReactiveFormsModule`
+* Reactive driven using Observables:
+  * More flexible
+  * Good for any scenario
+  * Immutable data model
+  * More component code / less markup
+  * Reactive transformations (debounce) - good for async validation
+  * Testing is easier
+
+Building blocks of forms: 
+* `FormControl` 
+  * Value
+  * Validation status
+  * User interactions
+  * Events
+
+* `FormGroup` 
+* `FormArray`

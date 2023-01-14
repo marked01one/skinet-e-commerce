@@ -5,6 +5,7 @@ import sys
 
 API_COMMANDS = ['start', 'dotnet', 'run']
 CLIENT_COMMANDS = ['start', 'ng', 'serve']
+REDIS_COMMANDS = ['']
 
 def api():
   # Activate the API server
@@ -22,9 +23,8 @@ def client():
 
 def redis():
   # Launch Redis Docker containers
-  subprocess.run(['docker', 'start', 'skinet-e-commerce-redis-commander-1'])
-  subprocess.run(['docker', 'start', 'skinet-e-commerce-redis-1'])
-  print("\n✔️ Redis containers launched\n")
+  subprocess.run(['docker-compose', 'up', '--detach'])
+  print("\n✔️  Redis containers launched\n")
   return
 
 
@@ -43,7 +43,7 @@ def run_all():
 
   print("💻 Development server: https://localhost:4200")
   print("🌐 API documentation: https://localhost:5001/swagger")
-  print("🗄️ Redis Commander Database: http://127.0.0.1:8081")
+  print("🗄️ Redis Commander Database: http://localhost:8081")
   return
 
 
