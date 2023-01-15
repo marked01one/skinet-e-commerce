@@ -2,9 +2,49 @@
 This markdown contains notes for the proof-of-concept e-commerce project
 
 ## API - Basics
+* Entities
+* Configurations
+* DbContext
+* 
 
+## API - Unit of Work
 
-## API - Architecture
+#### Current - Separate Db Repositorys
+<table>
+  <tr style="text-align: center;">
+    <td>Pros</td>
+    <td>Cons</td>
+  </tr>
+  <tr>
+    <td>
+      <ul>
+        <li>No need for additional Repos</li>
+        <li>Specification pattern is clear & flexible</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>Cpuld end up with partial updates</li>
+        <li>INjecting 3 Repos into a single controller!</li>
+        <li>Each repository 'owns' its own DbContext instance</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+### Future - Unit of Work
+* Unit of Work (UoW) creates only one DbContext instance for all
+* UoW creates repositories as needed
+* All repos share a DbContext
+* **Example:**
+```csharp
+using UoW;
+
+UoW.Repository<Product>.Add(product);
+UoW.Repository<ProductBrand>.Add(productBrand);
+
+UoW.Conplete();
+```
 
 
 ## API - Generic Repository
