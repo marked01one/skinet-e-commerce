@@ -1,0 +1,74 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center">
+    <ng-container *ngIf="order && (order.orderItems) as orderItems">
+      <div class="table-responsive col-8">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="border-0 bg-light" scope="col">
+                <div class="p-2 px-3 text-uppercase">Product</div>
+              </th>
+              <th class="border-0 bg-light" scope="col">
+                <div class="py-2 text-uppercase">Price</div>
+              </th>
+              <th class="border-0 bg-light" scope="col">
+                <div class="py-2 text-uppercase">Quantity</div>
+              </th>
+              <th class="border-0 bg-light" scope="col">
+                <div class="py-2 text-uppercase">Total</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orderItems">
+              <th scope="row">
+                <div class="p-2">
+                  <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid" style="max-height: 50px;">
+                  <div class="ml-3 d-inline-block align-middle">
+                    <h5 class="mb-0">
+                      <a routerLink="/shop/{{item.id}}" class="text-dark">
+                        {{item.productName}}
+                      </a>
+                    </h5>
+                  </div>
+                </div>
+              </th>
+              <td class="align-middle" style="font-weight: 600;">{{item.price | currency}}</td>
+              <td class="align-middle">
+                <div class="d-flex justify-content-center">
+                  <span
+                    class="font-weight-bold my-2">{{item.quantity}}</span>
+                </div>
+              </td>
+              <td class="align-middle" style="font-weight: 600;">
+                {{item.price * item.quantity | currency}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-4">
+        <div class="border-0 bg-light px-4 py-3 text-uppercase font-weight-bold">
+          Order Summary:
+        </div>
+        <div class="p-4">
+          <ul class="list-unstyled mb-4" *ngIf="order">
+            <li class="d-flex justify-content-between py-3 border-bottom">
+              <strong class="text-muted">Order subtotal</strong>
+              <strong class="text-muted">{{order.subtotal | currency}}</strong>
+            </li>
+            <li class="d-flex justify-content-between py-3 border-bottom">
+              <strong class="text-muted">Shipping and handling</strong>
+              <strong class="text-muted">{{(order.total - order.subtotal) | currency}}</strong>
+            </li>
+            <li class="d-flex justify-content-between py-3 border-bottom">
+              <strong class="text-muted">Total</strong>
+              <strong class="text-muted">{{order.total | currency}}</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
+

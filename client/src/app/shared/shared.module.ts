@@ -32,7 +32,6 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     CdkStepperModule,
     RouterModule
-
   ],
   exports: [
     PaginationModule,

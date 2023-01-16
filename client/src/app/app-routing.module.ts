@@ -16,13 +16,15 @@ const routes: Routes = [
   , data: {breadcrumb: 'Shop'}},
   {path: 'basket', loadChildren: () => import('./basket/basket.module').then(mod => mod.BasketModule)
   , data: {breadcrumb: 'Basket'}},
-  {path: 'checkout', 
-  canActivate: [AuthGuard], 
+  {path: 'checkout',
+  canActivate: [AuthGuard],
   loadChildren: () => import('./checkout/checkout.module').then(mod => mod.CheckoutModule)
   , data: {breadcrumb: 'Checkout'}},
   // Breadcrumb details are skipped for this level in Account (due to there being no routes for account root)
   {path: 'account', loadChildren: () => import('./account/account.module').then(mod => mod.AccountModule)
   , data: {breadcrumb: {skip: true}}},
+  {path: 'orders', loadChildren: () => import('./orders/orders.module').then(mod => mod.OrdersModule)
+  , data: {breadcrumb: 'Orders'}},
   {path: '**', redirectTo: 'not-found', pathMatch: 'full'},
 ];
 
