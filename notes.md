@@ -207,3 +207,13 @@ Building blocks of forms:
 
 * `FormGroup` 
 * `FormArray`
+
+## Client - Checkout
+* Implementing checkout
+* Collect info from user
+* Multi-step Form
+* Use `HttpInterceptor` to send JWT token automatically with the request
+* Update form with API data
+* **Goals:**
+  * Implement client checkout using a multi-step form wizard
+  * Use `HttpInterceptor` to auto send `JwtToken`
