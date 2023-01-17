@@ -8,14 +8,14 @@
 
 To activate, API, client, and Redis container servers, run this command in the project's root directory:
 ```
-python dev.py run_all
+py -m dev
 ```
 Alternatively, you can launch the API and client servers on separately as follows:
-* API: `python dev.py api`
-* Client: `python dev.py client`
-* Redis containers: `python dev.py redis`
+* API: `py -m dev api`
+* Client: `py -m dev client`
+* Redis containers: `py -m dev redis`
 
-**NOTE:** Download [Docker Desktop](https://www.docker.com/products/docker-desktop/) before activate the Redis containers 
+**NOTE:** Download and run [Docker Desktop](https://www.docker.com/products/docker-desktop/) before activating the Redis containers 
 
 ## API Documentation
 
