@@ -10,7 +10,7 @@ To activate, API, client, and Redis container servers, run this command in the p
 ```
 py -m dev
 ```
-Alternatively, you can launch the API and client servers on separately as follows:
+Alternatively, you can launch the the development servers separately as follows:
 * API: `py -m dev api`
 * Client: `py -m dev client`
 * Redis containers: `py -m dev redis`
